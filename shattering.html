@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Movie companion — Effects of Cloud Geometry and Metallicity on Shattering and Coagulation of Cold Gas</title>
+<style>
+:root{--bg:#ffffff;--ink:#1a1a1a;--muted:#5b5b5b;--accent:#7a1f1f;--rule:#dcdcdc;--soft:#f7f5f0;}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Times New Roman","Times","Liberation Serif",Georgia,serif;line-height:1.55;}
+.container{max-width:1100px;margin:0 auto;padding:48px 28px 72px;}
+header.paper{border-bottom:1px solid var(--rule);padding-bottom:24px;margin-bottom:28px;}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+h1{font-size:30px;line-height:1.25;margin:6px 0 12px;font-weight:600;}
+.authors{font-size:15px;color:#222;margin:6px 0 4px;}
+.affil{font-size:12.5px;color:var(--muted);margin:2px 0;}
+.links{margin-top:14px;font-size:13.5px;}
+.links a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e5cfcf;margin-right:18px;}
+.links a:hover{border-bottom-color:var(--accent);}
+h2{font-size:21px;margin:42px 0 8px;border-bottom:1px solid var(--rule);padding-bottom:6px;}
+h3{font-size:16px;margin:26px 0 6px;color:#2a2a2a;}
+p{font-size:15px;margin:10px 0;}
+.lede{font-size:15.5px;color:#2a2a2a;}
+.callout{background:var(--soft);border-left:3px solid var(--accent);padding:14px 18px;margin:18px 0;font-size:14.5px;}
+.callout h4{margin:0 0 6px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);}
+table.params{border-collapse:collapse;margin:10px 0 6px;font-size:14px;width:100%;}
+table.params th,table.params td{border-bottom:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top;}
+table.params th{font-weight:600;background:#fafafa;width:18%;}
+.movie-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 26px;margin-top:14px;}
+.movie{margin:0;}
+.video-wrap{position:relative;padding-top:56.25%;background:#000;}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+figcaption{padding-top:8px;font-size:13.5px;}
+.mtitle{font-weight:600;color:#2a2a2a;}
+.mparams{margin:2px 0;color:#444;font-size:12.7px;}
+.mblurb{color:#444;margin-top:3px;}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:1.5px 7px;border-radius:2px;margin-left:6px;border:1px solid;}
+.tag-shatter{color:#1f5d1f;border-color:#bcdcbc;background:#eef7ee;}
+.tag-borderline{color:#7a5a00;border-color:#ecd49a;background:#fbf3e0;}
+.tag-no-shatter,.tag-noshatter{color:#7a1f1f;border-color:#e5c7c7;background:#fbeeee;}
+.tag-fiducial{color:#1f3d7a;border-color:#c5d3ee;background:#eef2fb;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted);}
+img.cartoon{width:100%;max-width:760px;display:block;margin:14px auto;border:1px solid var(--rule);}
+@media (max-width:760px){.movie-grid{grid-template-columns:1fr;}h1{font-size:24px;}.container{padding:28px 18px 56px;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="paper">
+    <div class="eyebrow">Movie companion — Simulation gallery</div>
+    <h1>Effects of Cloud Geometry and Metallicity on Shattering and Coagulation of Cold Gas, and Implications for Cold Streams Penetrating Virial Shocks</h1>
+    <div class="authors">Zhiyuan Yao, Nir Mandelker, S. Peng Oh, Han Aung, Avishai Dekel</div>
+    <div class="affil">Racah Institute of Physics, The Hebrew University of Jerusalem &middot; UC Santa Barbara &middot; UC Santa Cruz / SCIPP</div>
+    <div class="links">
+      <a href="https://www.youtube.com/playlist?list=PLqoI8Bw6OjGxy2JDzrIFnky6Zut1fPsor">YouTube playlist</a>
+      <a href="index.html">Author homepage</a>
+      <a href="stream_penetration.html">Stream-penetration companion</a>
+    </div>
+  </header>
+
+  <section>
+    <p class="lede">This page collects the simulation movies referenced in the paper above. The movies illustrate the thermal fragmentation (“shattering”) and coagulation of pressure-perturbed cold clouds in three idealised geometries — sheets, streams, and spheres. The page is intended as a visual supplement; for the physical analysis, parameter scans, and analytic modelling, please see the paper itself.</p>
+
+    <div class="callout">
+      <h4>What you are looking at</h4>
+      <p>Each clip is a snapshot sequence from a 3D Eulerian AMR simulation (RAMSES) of an initially cold, dense cloud embedded in a hot, dilute background and held in pressure equilibrium. A small density perturbation seeds an implosion driven by radiative cooling; the cloud rebounds (the “explosion” phase) and either fragments into many cloudlets (“shattering”) or recoagulates back into one or a few larger clouds. The geometry (sheet / stream / sphere), the final overdensity χ₟, the metallicity, and the presence of a UV background all change the outcome — these movies show those effects.</p>
+    </div>
+
+    <h3>Control parameters used in the movie titles</h3>
+    <table class="params">
+      <tr><th>Geometry</th><td><em>Sheet</em>, <em>Stream</em>, or <em>Sphere</em>. Determines whether converging flows are 1D, 2D, or 3D.</td></tr>
+      <tr><th>η = ρ<sub>s,f</sub>/ρ<sub>s,i</sub></th><td>Cloud overdensity gain from initial to final equilibrium (set to 10 in all clips here).</td></tr>
+      <tr><th>χ<sub>f</sub> = ρ<sub>s,f</sub>/ρ<sub>bg</sub></th><td>Final cold-cloud overdensity relative to the hot background. This is the dominant parameter for whether the cloud shatters or coagulates.</td></tr>
+      <tr><th>StreamProj / SheetSlice</th><td>Visualisation type. <em>StreamProj</em> = density projection along the stream axis. <em>SheetSlice</em> = mid-plane slice through a planar sheet.</td></tr>
+    </table>
+  </section>
+
+  <h2>1. Geometrical effects: streams</h2>
+  <p>The four clips below isolate the role of the final overdensity χ<sub>f</sub> for cylindrical (stream) geometry at fixed η = 10. Increasing χ<sub>f</sub> moves the final state from quiet recoagulation toward fully developed shattering, with a borderline regime in between. These movies correspond to the stream rows of Table 1 in the paper (η = 10, χ<sub>f</sub> ∈ {100, 200, 400, 1000}).</p>
+
+  <div class="movie-grid">
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/FzIblIzz6TY?list=PLqoI8Bw6OjGxy2JDzrIFnky6Zut1fPsor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">StreamProj &mdash; η = 10, χ<sub>f</sub> = 100</div>
+    <div class="mparams"><span class="params">Stream geometry, η = 10, χ<sub>f</sub> = 100</span> <span class="tag tag-no-shatter">No-shatter</span></div>
+    <div class="mblurb">Lowest overdensity in the stream sweep. The cloud implodes, rebounds, and recoagulates into a single coherent stream — the cooling length never gets short enough to break the cloud.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/6A6zuppCAyc?list=PLqoI8Bw6OjGxy2JDzrIFnky6Zut1fPsor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">StreamProj &mdash; η = 10, χ<sub>f</sub> = 200</div>
+    <div class="mparams"><span class="params">Stream geometry, η = 10, χ<sub>f</sub> = 200</span> <span class="tag tag-borderline">Borderline</span></div>
+    <div class="mblurb">Intermediate overdensity. Some transient cloudlets appear during the explosion phase but most of the cold mass eventually recoagulates — the borderline shattering regime.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/83596DUshZA?list=PLqoI8Bw6OjGxy2JDzrIFnky6Zut1fPsor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">StreamProj &mdash; η = 10, χ<sub>f</sub> = 400</div>
+    <div class="mparams"><span class="params">Stream geometry, η = 10, χ<sub>f</sub> = 400</span> <span class="tag tag-shatter">Shatter</span></div>
+    <div class="mblurb">Above the shattering threshold for streams. The post-rebound cold gas fragments into many small cloudlets that persist on long timescales.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/mftaPy1sMrE?list=PLqoI8Bw6OjGxy2JDzrIFnky6Zut1fPsor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">StreamProj &mdash; η = 10, χ<sub>f</sub> = 1000</div>
+    <div class="mparams"><span class="params">Stream geometry, η = 10, χ<sub>f</sub> = 1000</span> <span class="tag tag-shatter">Shatter</span></div>
+    <div class="mblurb">Strongest stream case shown. Vigorous shattering produces a long-lived population of small cloudlets distributed along the stream axis.</div>
+  </figcaption>
+</figure>
+  </div>
+
+  <h2>2. Geometrical effects: sheets</h2>
+  <p>For comparison with the stream sweep above, the sheet geometry case below shows the implosion/explosion sequence in 1D-converging (planar) geometry. Sheets generically sit in the “fast coagulation” regime in this paper, so even at χ<sub>f</sub> values that shatter streams, the cold sheet recoagulates rapidly.</p>
+
+  <div class="movie-grid">
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/tY8Wa42CxOY?list=PLqoI8Bw6OjGxy2JDzrIFnky6Zut1fPsor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">SheetSlice &mdash; η = 10, χ<sub>f</sub> = 200</div>
+    <div class="mparams"><span class="params">Sheet geometry, η = 10, χ<sub>f</sub> = 200</span> <span class="tag tag-no-shatter">No-shatter</span></div>
+    <div class="mblurb">Mid-plane slice through a planar sheet at the same χ<sub>f</sub> = 200 as the borderline stream case. The sheet implodes, develops thin cooling layers, and recoagulates without producing long-lived cloudlets — illustrating that geometry alone shifts the outcome.</div>
+  </figcaption>
+</figure>
+  </div>
+
+  <section>
+    <h2>Notes</h2>
+    <p>The full simulation suite explored in the paper covers all three geometries, six values of χ<sub>f</sub>, multiple metallicities (0.03 – 1.0 Z<sub>⊙</sub>), with and without a UV background, and a range of resolutions (see Table 1 of the paper). Only a subset of those runs are uploaded as movies here; further visualisations may be added to the playlist over time.</p>
+    <p>Sheets and streams are run with outflow boundary conditions; the analysis (clump finder, mass / size statistics, coagulation criterion, application to cold streams penetrating virial shocks) is reported in the paper.</p>
+  </section>
+
+  <footer>
+    Movie companion to Yao, Mandelker, Oh, Aung &amp; Dekel (2025). Movies hosted on YouTube; please cite the paper when reusing them. Page maintained by Zhiyuan Yao.
+  </footer>
+</div>
+</body>
+</html>
