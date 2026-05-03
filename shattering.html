@@ -41,12 +41,11 @@ figcaption{padding-top:8px;font-size:13.5px;}
 .tag-no-shatter,.tag-noshatter{color:#7a1f1f;border-color:#e5c7c7;background:#fbeeee;}
 .tag-fiducial{color:#1f3d7a;border-color:#c5d3ee;background:#eef2fb;}
 figure.cartoon{margin:22px 0 8px;text-align:center;}
-figure.cartoon object,figure.cartoon embed,figure.cartoon iframe{width:100%;max-width:900px;height:560px;border:1px solid var(--rule);background:#fafafa;}
-figure.cartoon figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center;}
+figure.cartoon img{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;}
+figure.cartoon figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center;}
 figure.cartoon figcaption a{color:var(--accent);}
 footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted);}
-img.cartoon{width:100%;max-width:760px;display:block;margin:14px auto;border:1px solid var(--rule);}
-@media (max-width:760px){.movie-grid{grid-template-columns:1fr;}h1{font-size:24px;}.container{padding:28px 18px 56px;}figure.cartoon object,figure.cartoon embed,figure.cartoon iframe{height:420px;}}
+@media (max-width:760px){.movie-grid{grid-template-columns:1fr;}h1{font-size:24px;}.container{padding:28px 18px 56px;}}
 </style>
 </head>
 <body>
@@ -76,10 +75,8 @@ img.cartoon{width:100%;max-width:760px;display:block;margin:14px auto;border:1px
     </div>
 
     <figure class="cartoon">
-      <object data="images/shattering/Cartoon.pdf#view=FitH&toolbar=0&navpanes=0" type="application/pdf" aria-label="Schematic of cold-gas shattering and coagulation">
-        <iframe src="images/shattering/Cartoon.pdf#view=FitH&toolbar=0&navpanes=0" title="Schematic of cold-gas shattering and coagulation"></iframe>
-      </object>
-      <figcaption>Schematic of the implosion / explosion / shatter-or-coagulate sequence for sheets, streams, and spheres (Fig. 21 of <a href="https://doi.org/10.1093/mnras/stae2771">Yao et al. 2025</a>). <a href="images/shattering/Cartoon.pdf">Open the figure in a new tab</a>.</figcaption>
+      <img src="images/shattering/Cartoon.png" alt="Schematic of the implosion / explosion / shatter-or-coagulate sequence for sheets, streams, and spheres">
+      <figcaption>Schematic of the implosion / explosion / shatter-or-coagulate sequence for sheets (left), streams (centre), and spheres (right). Reproduced from Fig. 21 of <a href="https://doi.org/10.1093/mnras/stae2771">Yao et al. 2025</a>.</figcaption>
     </figure>
 
     <h3>Control parameters used in the movie titles</h3>
