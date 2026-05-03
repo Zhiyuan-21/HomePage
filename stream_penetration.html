@@ -1,402 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cold Stream Penetration of Virial Shocks &mdash; Movie Companion</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cold Stream Penetration of Virial Shocks — Movie Companion</title>
 <style>
-  :root {
-    --text: #1a1a1a;
-    --muted: #555;
-    --accent: #5a3a8a;
-    --rule: #d8d8d8;
-    --bg: #ffffff;
-    --bg-soft: #f6f4ee;
-    --max: 1100px;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    font-family: "Times New Roman", "Liberation Serif", Georgia, serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.55;
-    font-size: 17px;
-  }
-  .container { max-width: var(--max); margin: 0 auto; padding: 2.5em 1.4em 4em; }
-  header.paper { border-bottom: 2px solid var(--text); padding-bottom: 1.2em; margin-bottom: 1.6em; }
-  header.paper .eyebrow { color: var(--muted); font-size: 0.85em; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6em; }
-  h1.title { font-size: 1.85em; line-height: 1.25; margin: 0 0 0.4em; font-weight: 700; }
-  .authors { font-size: 1em; margin: 0.3em 0 0.4em; }
-  .authors em { font-style: italic; color: var(--muted); }
-  .affil { font-size: 0.88em; color: var(--muted); margin: 0; }
-  .links { margin-top: 0.9em; font-size: 0.95em; }
-  .links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
-  .links a:hover { background: #f1ecf7; }
-  h2 { font-size: 1.35em; margin-top: 2.2em; margin-bottom: 0.4em; padding-bottom: 0.25em; border-bottom: 1px solid var(--rule); font-weight: 700; }
-  h3 { font-size: 1.08em; margin-top: 1.6em; margin-bottom: 0.4em; font-weight: 700; }
-  p { margin: 0.7em 0; text-align: justify; }
-  .lede { font-size: 1.02em; }
-  .legend {
-    background: var(--bg-soft);
-    border-left: 4px solid var(--accent);
-    padding: 0.9em 1.2em;
-    margin: 1.4em 0;
-    font-size: 0.96em;
-  }
-  .legend dl { margin: 0.4em 0 0; display: grid; grid-template-columns: max-content 1fr; column-gap: 1em; row-gap: 0.25em; }
-  .legend dt { font-weight: 700; }
-  .legend dd { margin: 0; }
-  figure.schematic { margin: 1.5em 0 1.8em; text-align: center; }
-  figure.schematic img { max-width: 100%; height: auto; border: 1px solid var(--rule); }
-  figure.schematic figcaption { font-size: 0.9em; color: var(--muted); margin-top: 0.6em; text-align: justify; }
-  .panel-explainer { background: #fafafa; border: 1px solid var(--rule); padding: 1em 1.2em; margin: 1.2em 0 1.6em; font-size: 0.95em; }
-  .panel-explainer ul { margin: 0.4em 0; padding-left: 1.4em; }
-  .panel-explainer li { margin: 0.15em 0; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 1.6em;
-    margin: 1.2em 0 0.6em;
-  }
-  .movie { border: 1px solid var(--rule); padding: 0.9em 1em 1em; background: #fff; }
-  .movie .frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; margin-bottom: 0.6em; }
-  .movie .frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  .movie h4 { margin: 0 0 0.25em; font-size: 1.02em; font-family: "Courier New", ui-monospace, monospace; }
-  .movie .params { color: var(--muted); font-size: 0.88em; margin: 0 0 0.45em; font-family: "Courier New", ui-monospace, monospace; }
-  .movie .desc { font-size: 0.93em; margin: 0; }
-  .regime-tag { display: inline-block; font-size: 0.75em; padding: 0.1em 0.55em; border-radius: 0.2em; vertical-align: middle; margin-left: 0.4em; font-family: inherit; letter-spacing: 0.04em; }
-  .tag-frag { background: #e8d4f3; color: #4a1d6a; }
-  .tag-coag { background: #d6ecdc; color: #1f5c33; }
-  .tag-disr { background: #f6d2d2; color: #781a1a; }
-  .tag-bord { background: #f4e7c8; color: #6b4a0e; }
-  .tag-conv { background: #e0e0e0; color: #333; }
-  table.params { border-collapse: collapse; margin: 0.8em 0 1em; font-size: 0.92em; }
-  table.params th, table.params td { border: 1px solid var(--rule); padding: 0.35em 0.7em; text-align: center; }
-  table.params th { background: var(--bg-soft); font-weight: 700; }
-  footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.88em; }
-  @media (max-width: 600px) {
-    body { font-size: 16px; }
-    .container { padding: 1.5em 1em 3em; }
-    h1.title { font-size: 1.5em; }
-    .grid { grid-template-columns: 1fr; gap: 1.2em; }
-  }
+:root{--bg:#ffffff;--ink:#1a1a1a;--muted:#5b5b5b;--accent:#7a1f1f;--rule:#dcdcdc;--soft:#f7f5f0;}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Times New Roman","Times","Liberation Serif",Georgia,serif;line-height:1.55;}
+.container{max-width:1100px;margin:0 auto;padding:48px 28px 72px;}
+header.paper{border-bottom:1px solid var(--rule);padding-bottom:24px;margin-bottom:28px;}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+h1{font-size:30px;line-height:1.25;margin:6px 0 12px;font-weight:600;}
+.authors{font-size:15px;color:#222;margin:6px 0 4px;}
+.affil{font-size:12.5px;color:var(--muted);margin:2px 0;}
+.cite{font-size:13px;color:#333;margin:10px 0 2px;}
+.cite code{font-family:"SFMono-Regular",Consolas,Menlo,monospace;font-size:12.5px;background:#f3efe7;padding:1px 5px;border-radius:2px;}
+.links{margin-top:14px;font-size:13.5px;}
+.links a{color:var(--accent);text-decoration:none;border-bottom:1px solid #e5cfcf;margin-right:18px;}
+.links a:hover{border-bottom-color:var(--accent);}
+h2{font-size:21px;margin:42px 0 8px;border-bottom:1px solid var(--rule);padding-bottom:6px;}
+h3{font-size:16px;margin:26px 0 6px;color:#2a2a2a;}
+p{font-size:15px;margin:10px 0;}
+.lede{font-size:15.5px;color:#2a2a2a;}
+.callout{background:var(--soft);border-left:3px solid var(--accent);padding:14px 18px;margin:18px 0;font-size:14.5px;}
+.callout h4{margin:0 0 6px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);}
+table.params{border-collapse:collapse;margin:10px 0 6px;font-size:14px;width:100%;}
+table.params th,table.params td{border-bottom:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top;}
+table.params th{font-weight:600;background:#fafafa;width:18%;}
+.movie-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 26px;margin-top:14px;}
+.movie{margin:0;}
+.video-wrap{position:relative;padding-top:56.25%;background:#000;}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+figcaption{padding-top:8px;font-size:13.5px;}
+.mtitle{font-weight:600;color:#2a2a2a;}
+.mparams{margin:2px 0;color:#444;font-size:12.7px;}
+.mblurb{color:#444;margin-top:3px;}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:1.5px 7px;border-radius:2px;margin-left:6px;border:1px solid;}
+.tag-coag,.tag-coagulation{color:#1f5d1f;border-color:#bcdcbc;background:#eef7ee;}
+.tag-frag,.tag-fragmentation{color:#7a5a00;border-color:#ecd49a;background:#fbf3e0;}
+.tag-disr,.tag-disruption{color:#7a1f1f;border-color:#e5c7c7;background:#fbeeee;}
+.tag-bord,.tag-borderline{color:#444;border-color:#ccc;background:#f4f4f4;}
+.tag-fiducial{color:#1f3d7a;border-color:#c5d3ee;background:#eef2fb;}
+.tag-conv,.tag-convergence{color:#5a3a72;border-color:#d6c7e3;background:#f5eef9;}
+figure.fig{margin:22px 0 8px;text-align:center;}
+figure.fig img{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;}
+figure.fig figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center;}
+figure.fig figcaption a{color:var(--accent);}
+img.cartoon{width:100%;max-width:760px;display:block;margin:14px auto;}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted);}
+@media (max-width:760px){.movie-grid{grid-template-columns:1fr;}h1{font-size:24px;}.container{padding:28px 18px 56px;}}
 </style>
 </head>
 <body>
 <div class="container">
+  <header class="paper">
+    <div class="eyebrow">Movie companion — Simulation gallery</div>
+    <h1>Cold Stream Penetration of Virial Shocks</h1>
+    <div class="authors">Zhiyuan Yao, Nir Mandelker, Avishai Dekel, S. Peng Oh, Han Aung</div>
+    <div class="affil">Racah Institute of Physics, The Hebrew University of Jerusalem &middot; UC Santa Barbara &middot; UC Santa Cruz / SCIPP</div>
+    <div class="links">
+      <a href="https://www.youtube.com/playlist?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M">YouTube playlist</a>
+      <a href="index.html">Author homepage</a>
+      <a href="shattering.html">Shattering companion</a>
+      <a href="https://doi.org/10.1093/mnras/stae2771">Shattering paper (MNRAS)</a>
+    </div>
+  </header>
 
-<header class="paper">
-  <div class="eyebrow">Movie companion to the paper</div>
-  <h1 class="title">Cold Stream Penetration of Virial Shocks: Fragmentation, Coagulation, and Disruption in the Hot Circumgalactic Medium</h1>
-  <p class="authors">Zhiyuan Yao<sup>1</sup>, Nir Mandelker<sup>1</sup>, S. Peng Oh<sup>2</sup></p>
-  <p class="affil"><sup>1</sup>Racah Institute of Physics, The Hebrew University, Jerusalem 91904, Israel<br><sup>2</sup>Department of Physics, University of California, Santa Barbara, CA 93106, USA</p>
-  <p class="links">
-    <a href="https://www.youtube.com/playlist?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M">Full YouTube playlist</a>
-    &nbsp;&middot;&nbsp;
-    <a href="index.html">Author homepage</a>
-  </p>
-</header>
+  <section>
+    <p class="lede">This page collects the simulation movies referenced in the paper above, on the penetration of cold streams through the virial shock of massive halos at high redshift. The movies are intended as a visual supplement to the paper; for the analytic theory, parameter scans, and detailed analysis, please see the paper itself.</p>
 
-<p class="lede">This page is a companion to the paper above. It collects the <strong>simulation movies</strong> referenced in the draft, organised in the same logic as Sections&nbsp;4&ndash;6 plus the convergence-test appendix. The text and figures of the paper are not duplicated here; please consult the manuscript for the physical analysis.</p>
+    <figure class="fig">
+      <img src="images/penetration/Cartoon.png" alt="Schematic of stream penetration through the virial shock">
+      <figcaption>Schematic of the three regimes — coagulation, fragmentation, and disruption — encountered by a cold stream as it penetrates the virial shock of a massive halo. Reproduced from the paper.</figcaption>
+    </figure>
 
-<section>
-<h2>Simulation parameters</h2>
-<p>Each simulation is labelled <code>R{r<sub>s</sub>}D{&chi;}P{P}M{M}</code>, where the four control parameters are:</p>
-<div class="legend">
-<dl>
-<dt>r<sub>s,f</sub></dt><dd>Final stream radius in the post-equilibration CGM, in kpc.</dd>
-<dt>&chi;<sub>f</sub> &equiv; &rho;<sub>s,f</sub>/&rho;<sub>h</sub></dt><dd>Final density contrast between the cold stream and the hot CGM (after pressure equilibration).</dd>
-<dt>P &equiv; P<sub>h</sub>/P<sub>s,i</sub></dt><dd>Initial pressure contrast between the hot CGM and the cold filamentary stream (CFM) before it has entered the halo.</dd>
-<dt>M<sub>s</sub> &equiv; v<sub>s,i</sub>/c<sub>h</sub></dt><dd>Mach number of the cold stream relative to the ambient CGM sound speed.</dd>
-</dl>
-<p style="margin-top:0.7em; font-size:0.95em;">The <strong>fiducial run</strong> is <code>R1D100P7M1</code>: r<sub>s,f</sub>=1&nbsp;kpc, &chi;<sub>f</sub>=100, P=7, M<sub>s</sub>=1.</p>
-</div>
+    <div class="callout">
+      <h4>What you are looking at</h4>
+      <p>Each clip is from a 3D Eulerian AMR (RAMSES) simulation of a cold cylindrical stream injected through a hot, dilute, hydrostatic halo atmosphere at the virial radius. The stream interacts with a standing virial shock and either remains a coherent cold stream (“coagulation”), develops a quasi-steady shocked envelope that fragments into long-lived cloudlets (“fragmentation”), or is destroyed by KHI/heating before it reaches the central galaxy (“disruption”). Four control parameters set the outcome — the post-shock stream radius r<sub>s,f</sub>, the cold-to-hot density contrast χ<sub>f</sub>, the pressure contrast P, and the stream Mach number M<sub>s</sub>.</p>
+    </div>
 
-<figure class="schematic">
-  <img src="images/Cartoon_penetration.png" alt="Schematic of cold-stream penetration through the virial shock.">
-  <figcaption>Figure&nbsp;1 of the paper. A schematic illustration of the fate of cold gas as a cold stream penetrates the virial shock. Strong pressure contrast and velocity shear at penetration may drive fragmentation and seed cold structures in the CGM.</figcaption>
+    <h3>Control parameters used in the movie names</h3>
+    <table class="params">
+      <tr><th>r<sub>s,f</sub></th><td>Final (post-shock) stream radius in kpc. Movie tag: <code>R{r}</code> (e.g. <code>R1</code> = 1 kpc).</td></tr>
+      <tr><th>χ<sub>f</sub></th><td>Cold/hot density contrast in equilibrium with the CGM. Movie tag: <code>D{χ}</code> (e.g. <code>D100</code> = χ<sub>f</sub> = 100).</td></tr>
+      <tr><th>P</th><td>Pressure contrast between CGM and the cold-stream / CFM at injection. Movie tag: <code>P{P}</code>.</td></tr>
+      <tr><th>M<sub>s</sub></th><td>Stream Mach number relative to the CGM. Movie tag: <code>M{M}</code> (e.g. <code>M1</code> = M<sub>s</sub> = 1, <code>M05</code> = 0.5).</td></tr>
+      <tr><th>L{level}</th><td>Maximum AMR refinement level for convergence-test runs.</td></tr>
+    </table>
+    <p style="font-size:13px;color:#444">The fiducial run for the paper is <strong>R1D100P7M1</strong> (r<sub>s,f</sub> = 1 kpc, χ<sub>f</sub> = 100, P = 7, M<sub>s</sub> = 1).</p>
+  </section>
+
+  <h2>4. Three regimes: coagulation, fragmentation, disruption</h2>
+  <p>This section follows §4 of the paper. We sweep r<sub>s,f</sub> and χ<sub>f</sub> at fixed P = 7 and M<sub>s</sub> = 1 to bracket the three outcome regimes.</p>
+  <div class="movie-grid">
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/otV0daKbtBo?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R0.1 D50 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=0.1 kpc, χ_f=50, P=7, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Smallest, lowest-overdensity stream. Disrupted by the virial shock before reaching the centre.</div>
+  </figcaption>
 </figure>
-</section>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/NlqfpGuYorI?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R0.2 D50 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=0.2 kpc, χ_f=50, P=7, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Slightly larger stream, still disrupted under the same hot-halo conditions.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/0OVlv5VUkuo?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1 kpc, χ_f=50, P=7, M_s=1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">A 1-kpc stream at modest overdensity — fragments into long-lived cold clumps along the stream axis.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/wvU0xIqs-zU?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R0.1 D100 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=0.1 kpc, χ_f=100, P=7, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Higher χ_f does not save a sub-kpc stream from disruption.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/pn22LKiXnjg?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P7 M1 (fiducial)</div>
+    <div class="mparams"><span class="params">r_{s,f}=1 kpc, χ_f=100, P=7, M_s=1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">The paper\u2019s fiducial run. The stream survives but its envelope fragments into long-lived clumps before re-coagulating near the centre.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/ifV2AoZ2_wE?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R10 D100 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=10 kpc, χ_f=100, P=7, M_s=1</span> <span class="tag tag-coag">Coag</span></div>
+    <div class="mblurb">A wide, well-confined stream that stays coherent all the way through the halo — the coagulation regime.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/oxL5kvqyFyg?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1 kpc, χ_f=300, P=7, M_s=1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Increasing χ_f at fixed r_{s,f} pushes the stream further into the fragmentation regime.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/ZebL5KvGIg8?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R10 D300 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=10 kpc, χ_f=300, P=7, M_s=1</span> <span class="tag tag-coag">Coag</span></div>
+    <div class="mblurb">Wide, dense stream — robust coagulation.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/xheY310-k9A?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R50 D300 P7 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=50 kpc, χ_f=300, P=7, M_s=1</span> <span class="tag tag-coag">Coag</span></div>
+    <div class="mblurb">Largest stream in the suite, deeply in the coagulation regime.</div>
+  </figcaption>
+</figure>
+  </div>
 
-<section>
-<h2>What you are looking at in each movie</h2>
-<div class="panel-explainer">
-<p style="margin-top:0">Every movie shows the same five horizontal panels, evolving in time, of a 3D cylindrical cold stream interacting with a hot CGM. From top to bottom:</p>
-<ul>
-<li><strong>n<sub>H</sub></strong> &mdash; hydrogen number density (cm<sup>-3</sup>).</li>
-<li><strong>T</strong> &mdash; gas temperature (K).</li>
-<li><strong>P/k<sub>B</sub></strong> &mdash; thermal pressure (K&nbsp;cm<sup>-3</sup>).</li>
-<li><strong>v<sub>y</sub></strong> &mdash; velocity along the stream direction (km/s).</li>
-<li><strong>Mach number</strong> &mdash; local Mach number of the flow.</li>
-</ul>
-<p style="margin-bottom:0">Spatial axes are in kpc, and time is reported in units of L<sub>box</sub>/v<sub>s</sub>. Regime tags below each movie reflect the classification used in the paper: <span class="regime-tag tag-coag">coagulation</span> <span class="regime-tag tag-frag">fragmentation</span> <span class="regime-tag tag-disr">disruption</span> <span class="regime-tag tag-bord">borderline</span> <span class="regime-tag tag-conv">convergence test</span>.</p>
-</div>
-</section>
+  <h2>5. Pressure contrast P</h2>
+  <p>This section follows §5 of the paper. We vary the CGM/CFM pressure contrast P at fixed M<sub>s</sub> = 1.</p>
+  <div class="movie-grid">
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/3wmiZU8anBo?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P1 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=50, P=1, M_s=1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Pressure-balanced injection at low χ_f.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/7yZgFqik3tk?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P18 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=50, P=18, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">High pressure jump drives strong KHI — the stream is disrupted.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/FF7EIrkzHpA?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P1 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, P=1, M_s=1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Pressure-balanced fiducial-radius case.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/SDX4jzqlym4?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P18 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, P=18, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Strong over-pressure CGM disrupts the fiducial stream.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/T3P0VXa8ji4?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P30 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, P=30, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Even stronger over-pressure: rapid disruption.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/VU-UAjZZAhE?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P1 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=300, P=1, M_s=1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Pressure-balanced, highest χ_f. Fragmentation regime.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/nazaGidzbQw?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P18 M1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=300, P=18, M_s=1</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">High pressure jump disrupts even the densest 1-kpc stream.</div>
+  </figcaption>
+</figure>
+  </div>
 
-<section id="sec-three-regimes">
-<h2>&sect;4 &mdash; Three regimes: stream radius and density contrast</h2>
-<p>Holding the pressure contrast and Mach number fixed at the fiducial values (P=7, M<sub>s</sub>=1), we vary the stream radius r<sub>s,f</sub> across three density contrasts &chi;<sub>f</sub>&nbsp;=&nbsp;50, 100, 300. The movies below trace the transition between the coagulation, fragmentation, and disruption regimes as the stream becomes thinner and/or denser.</p>
+  <h2>6. Stream Mach number M<sub>s</sub></h2>
+  <p>This section follows §6 of the paper. We vary the stream Mach number at fixed P = 7.</p>
+  <div class="movie-grid">
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/vaNE4FwqjSk?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P7 M0.5</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=50, P=7, M_s=0.5</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Sub-sonic injection.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/nSm8CVMC_uc?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P7 M2</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=50, P=7, M_s=2</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Super-sonic, low-χ_f stream is disrupted.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/4ffBT2uoG2s?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P7 M0.1</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, P=7, M_s=0.1</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Very sub-sonic stream still fragments.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/8ukLoiv9BVs?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P7 M0.5</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, P=7, M_s=0.5</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Sub-sonic fiducial-χ case.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/RQkED8d-AGc?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P7 M2</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, P=7, M_s=2</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Super-sonic fiducial stream tips into disruption.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/1EJqkT1TcD8?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P7 M0.5</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=300, P=7, M_s=0.5</span> <span class="tag tag-frag">Frag</span></div>
+    <div class="mblurb">Sub-sonic high-χ_f stream — fragmentation.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/G2oGZfFFT5U?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P7 M2</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=300, P=7, M_s=2</span> <span class="tag tag-disr">Disr</span></div>
+    <div class="mblurb">Super-sonic high-χ_f stream — disrupted.</div>
+  </figcaption>
+</figure>
+  </div>
 
-<table class="params">
-<tr><th>&chi;<sub>f</sub> \ r<sub>s,f</sub> [kpc]</th><th>0.1</th><th>0.2</th><th>1</th><th>10</th><th>50</th></tr>
-<tr><th>50</th><td>R01D50P7M1</td><td>R02D50P7M1</td><td>R1D50P7M1</td><td>&mdash;</td><td>&mdash;</td></tr>
-<tr><th>100</th><td>R01D100P7M1</td><td>&mdash;</td><td>R1D100P7M1</td><td>R10D100P7M1</td><td>&mdash;</td></tr>
-<tr><th>300</th><td>&mdash;</td><td>&mdash;</td><td>R1D300P7M1</td><td>R10D300P7M1</td><td>R50D300P7M1</td></tr>
-</table>
+  <h2>7. Application to galaxy evolution</h2>
+  <p>This section follows §7 of the paper, where the per-run regimes above are folded into halo growth tracks to determine which halos a cold stream can actually reach. The two diagnostic figures below summarise the result.</p>
 
-<h3>&chi;<sub>f</sub> = 50</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/otV0daKbtBo?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R01D50P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R01D50P7M1<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=0.1, chi=50, P=7, M=1</p>
-  <p class="desc">Thinnest stream at the lowest density contrast: shear-driven mixing destroys clumps before they can fragment.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/NlqfpGuYorI?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R02D50P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R02D50P7M1<span class="regime-tag tag-bord">borderline</span></h4>
-  <p class="params">r_s=0.2, chi=50, P=7, M=1</p>
-  <p class="desc">Borderline case: the stream core marginally survives while detached fragments are disrupted.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/0OVlv5VUkuo?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P7M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=50, P=7, M=1</p>
-  <p class="desc">Long-lived clumps form around a surviving stream &mdash; the fragmentation regime at moderate density contrast.</p>
-</div>
-</div>
+  <figure class="fig">
+    <img src="images/penetration/Diag_size_chi_halo.png" alt="r_s,f vs chi_f regime diagram with halo evolutionary tracks">
+    <figcaption><strong>Fig. 17 of the paper.</strong> The (r<sub>s,f</sub>, χ<sub>f</sub>) regime diagram with halo evolutionary tracks for 1σ, 2σ and 3σ peaks colour-coded by redshift. Halos around 1σ peaks tend to populate the coagulation regime; higher peaks at low redshift transition into fragmentation and eventually disruption. See the paper for details.</figcaption>
+  </figure>
 
-<h3>&chi;<sub>f</sub> = 100 (includes fiducial)</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/wvU0xIqs-zU?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R01D100P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R01D100P7M1<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=0.1, chi=100, P=7, M=1</p>
-  <p class="desc">Thin stream at the fiducial density contrast: clumps are destroyed by shear before they can detach.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/pn22LKiXnjg?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P7M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=100, P=7, M=1 &mdash; FIDUCIAL</p>
-  <p class="desc">The fiducial run. Pressure-driven implosion and rebound seed long-lived fragments around a surviving cold core.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/ifV2AoZ2_wE?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R10D100P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R10D100P7M1<span class="regime-tag tag-coag">coagulation</span></h4>
-  <p class="params">r_s=10, chi=100, P=7, M=1</p>
-  <p class="desc">Wide stream: short-lived clumps quickly merge back onto the core &mdash; the coagulation regime.</p>
-</div>
-</div>
+  <figure class="fig">
+    <img src="images/penetration/Diag_Mv_z.png" alt="Halo mass versus redshift map showing where cold streams penetrate">
+    <figcaption><strong>Fig. 18 of the paper.</strong> Cold-stream penetration as a function of halo virial mass M<sub>v</sub> and redshift z. The blue/orange curves mark the criteria for the early bow-shock transition; the purple curves bracket the regime where streams survive shear-driven (KHI) disruption. Halos in the unshaded “cold streams in hot media” wedge are predicted to host penetrating cold streams. See the paper for details.</figcaption>
+  </figure>
 
-<h3>&chi;<sub>f</sub> = 300</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/oxL5kvqyFyg?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P7M1<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=1, chi=300, P=7, M=1</p>
-  <p class="desc">At the highest density contrast a 1&nbsp;kpc stream is no longer wide enough to survive: clumps are disrupted.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/ZebL5KvGIg8?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R10D300P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R10D300P7M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=10, chi=300, P=7, M=1</p>
-  <p class="desc">Wider stream supports persistent fragmentation around a surviving core at chi=300.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/xheY310-k9A?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R50D300P7M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R50D300P7M1<span class="regime-tag tag-coag">coagulation</span></h4>
-  <p class="params">r_s=50, chi=300, P=7, M=1</p>
-  <p class="desc">Very wide, very dense stream: clumps re-coagulate onto the core almost immediately.</p>
-</div>
-</div>
-</section>
+  <h2>Appendix. Convergence tests</h2>
+  <p>From the convergence-test appendix of the paper, three fiducial-radius runs at two extra resolutions (L10 and L12).</p>
+  <div class="movie-grid">
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/w19pAKCUJ9o?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P7 M1 — L10</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=50, L=10</span> <span class="tag tag-conv">Conv</span></div>
+    <div class="mblurb">Convergence test, low χ_f.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/0sHS1vVycOQ?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D50 P7 M1 — L12</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=50, L=12</span> <span class="tag tag-conv">Conv</span></div>
+    <div class="mblurb">Convergence test, low χ_f, higher resolution.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/VtddmEt7Vwk?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P7 M1 — L10</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, L=10</span> <span class="tag tag-conv">Conv</span></div>
+    <div class="mblurb">Convergence test, fiducial χ_f.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/1Evtf-emo90?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D100 P7 M1 — L12</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=100, L=12</span> <span class="tag tag-conv">Conv</span></div>
+    <div class="mblurb">Convergence test, fiducial χ_f, higher resolution.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/_uSRAv5B0dA?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P7 M1 — L10</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=300, L=10</span> <span class="tag tag-conv">Conv</span></div>
+    <div class="mblurb">Convergence test, high χ_f.</div>
+  </figcaption>
+</figure>
+    <figure class="movie">
+  <div class="video-wrap"><iframe src="https://www.youtube.com/embed/iBJ3NHru_bc?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+  <figcaption>
+    <div class="mtitle">R1 D300 P7 M1 — L12</div>
+    <div class="mparams"><span class="params">r_{s,f}=1, χ_f=300, L=12</span> <span class="tag tag-conv">Conv</span></div>
+    <div class="mblurb">Convergence test, high χ_f, higher resolution.</div>
+  </figcaption>
+</figure>
+  </div>
 
-<section id="sec-pressure">
-<h2>&sect;5 &mdash; Effects of pressure contrast</h2>
-<p>Fixing r<sub>s,f</sub>=1&nbsp;kpc and M<sub>s</sub>=1, we vary the initial pressure contrast P=P<sub>h</sub>/P<sub>s,i</sub> across the same three density contrasts. A finite P drives an oblique shock that steepens into a bow shock at large contrasts; the dominant role of P is to amplify the transient mass and surface area during the restoring phase before pressure equilibrium is reached.</p>
-
-<table class="params">
-<tr><th>&chi;<sub>f</sub> \ P</th><th>1</th><th>7</th><th>18</th><th>30</th></tr>
-<tr><th>50</th><td>R1D50P1M1</td><td>R1D50P7M1</td><td>R1D50P18M1</td><td>&mdash;</td></tr>
-<tr><th>100</th><td>R1D100P1M1</td><td>R1D100P7M1</td><td>R1D100P18M1</td><td>R1D100P30M1</td></tr>
-<tr><th>300</th><td>R1D300P1M1</td><td>R1D300P7M1</td><td>R1D300P18M1</td><td>&mdash;</td></tr>
-</table>
-
-<h3>&chi;<sub>f</sub> = 50</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/3wmiZU8anBo?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P1M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P1M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=50, P=1, M=1</p>
-  <p class="desc">Pressure-equilibrium baseline: pure shear-driven evolution at chi=50.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/7yZgFqik3tk?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P18M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P18M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=50, P=18, M=1</p>
-  <p class="desc">Strong pressure contrast amplifies the transient phase before the flow converges to the shear-dominated state.</p>
-</div>
-</div>
-
-<h3>&chi;<sub>f</sub> = 100</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/FF7EIrkzHpA?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P1M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P1M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=100, P=1, M=1</p>
-  <p class="desc">Pressure-equilibrium baseline at fiducial chi: shear and cooling alone govern the evolution.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/SDX4jzqlym4?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P18M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P18M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=100, P=18, M=1</p>
-  <p class="desc">Large pressure contrast: a strong oblique shock enhances cold mass and surface area in the restoring phase.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/T3P0VXa8ji4?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P30M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P30M1<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=100, P=30, M=1</p>
-  <p class="desc">Extreme pressure contrast steepens the oblique shock into a bow shock, maximising kinetic-to-thermal conversion.</p>
-</div>
-</div>
-
-<h3>&chi;<sub>f</sub> = 300</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/VU-UAjZZAhE?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P1M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P1M1<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=1, chi=300, P=1, M=1</p>
-  <p class="desc">Pressure-equilibrium baseline at high chi: 1&nbsp;kpc is below the survival threshold and the stream disrupts.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/nazaGidzbQw?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P18M1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P18M1<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=1, chi=300, P=18, M=1</p>
-  <p class="desc">Even with strong pressure amplification, shear and cooling still drive disruption at chi=300.</p>
-</div>
-</div>
-</section>
-
-<section id="sec-mach">
-<h2>&sect;6 &mdash; Effects of stream Mach number</h2>
-<p>Fixing r<sub>s,f</sub>=1&nbsp;kpc and P=7, we vary the stream Mach number M<sub>s</sub>=v<sub>s,i</sub>/c<sub>h</sub>. The Mach number sets the strength of velocity shear at the stream&ndash;CGM interface and therefore the survival outcome.</p>
-
-<table class="params">
-<tr><th>&chi;<sub>f</sub> \ M<sub>s</sub></th><th>0.1</th><th>0.5</th><th>1</th><th>2</th></tr>
-<tr><th>50</th><td>&mdash;</td><td>R1D50P7M05</td><td>R1D50P7M1</td><td>R1D50P7M2</td></tr>
-<tr><th>100</th><td>R1D100P7M01</td><td>R1D100P7M05</td><td>R1D100P7M1</td><td>R1D100P7M2</td></tr>
-<tr><th>300</th><td>&mdash;</td><td>R1D300P7M05</td><td>R1D300P7M1</td><td>R1D300P7M2</td></tr>
-</table>
-
-<h3>&chi;<sub>f</sub> = 50</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/vaNE4FwqjSk?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P7M05" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P7M05<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=50, P=7, M=0.5</p>
-  <p class="desc">Subsonic stream: weak shear allows long-lived fragments to persist around a surviving core.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/nSm8CVMC_uc?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P7M2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P7M2<span class="regime-tag tag-bord">borderline</span></h4>
-  <p class="params">r_s=1, chi=50, P=7, M=2</p>
-  <p class="desc">Supersonic stream: stronger shear pushes the system toward the borderline of survival.</p>
-</div>
-</div>
-
-<h3>&chi;<sub>f</sub> = 100</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/4ffBT2uoG2s?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P7M01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P7M01<span class="regime-tag tag-coag">coagulation</span></h4>
-  <p class="params">r_s=1, chi=100, P=7, M=0.1</p>
-  <p class="desc">Nearly static stream: shear is negligible and clumps quickly merge back onto the core.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/8ukLoiv9BVs?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P7M05" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P7M05<span class="regime-tag tag-frag">fragmentation</span></h4>
-  <p class="params">r_s=1, chi=100, P=7, M=0.5</p>
-  <p class="desc">Subsonic case at fiducial chi: fragmentation regime with persistent clumps.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/RQkED8d-AGc?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P7M2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P7M2<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=1, chi=100, P=7, M=2</p>
-  <p class="desc">Supersonic shear drives the fiducial-radius stream into the disruption regime.</p>
-</div>
-</div>
-
-<h3>&chi;<sub>f</sub> = 300</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/1EJqkT1TcD8?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P7M05" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P7M05<span class="regime-tag tag-bord">borderline</span></h4>
-  <p class="params">r_s=1, chi=300, P=7, M=0.5</p>
-  <p class="desc">Subsonic stream at high chi: marginal survival of the core with disrupted fragments.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/G2oGZfFFT5U?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P7M2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P7M2<span class="regime-tag tag-disr">disruption</span></h4>
-  <p class="params">r_s=1, chi=300, P=7, M=2</p>
-  <p class="desc">Supersonic shear at high chi: shear-driven disruption dominates.</p>
-</div>
-</div>
-</section>
-
-<section id="sec-convergence">
-<h2>Appendix &mdash; Convergence tests</h2>
-<p>To verify that our results are not artefacts of finite resolution, the three fiducial-Mach, fiducial-pressure runs (r<sub>s,f</sub>=1&nbsp;kpc; &chi;<sub>f</sub>=50, 100, 300) are repeated at two additional refinement levels: <code>L10</code> (lower) and <code>L12</code> (higher). The standard production runs shown above use refinement level 11.</p>
-
-<h3>Lower-resolution runs (L10)</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/w19pAKCUJ9o?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P7M1 L10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P7M1 L10<span class="regime-tag tag-conv">convergence test</span></h4>
-  <p class="params">r_s=1, chi=50, P=7, M=1 - L10</p>
-  <p class="desc">Convergence test against R1D50P7M1 at lower refinement.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/VtddmEt7Vwk?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P7M1 L10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P7M1 L10<span class="regime-tag tag-conv">convergence test</span></h4>
-  <p class="params">r_s=1, chi=100, P=7, M=1 - L10</p>
-  <p class="desc">Convergence test against the fiducial run at lower refinement.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/_uSRAv5B0dA?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P7M1 L10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P7M1 L10<span class="regime-tag tag-conv">convergence test</span></h4>
-  <p class="params">r_s=1, chi=300, P=7, M=1 - L10</p>
-  <p class="desc">Convergence test against R1D300P7M1 at lower refinement.</p>
-</div>
-</div>
-
-<h3>Higher-resolution runs (L12)</h3>
-<div class="grid">
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/0sHS1vVycOQ?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D50P7M1 L12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D50P7M1 L12<span class="regime-tag tag-conv">convergence test</span></h4>
-  <p class="params">r_s=1, chi=50, P=7, M=1 - L12</p>
-  <p class="desc">Convergence test against R1D50P7M1 at higher refinement.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/1Evtf-emo90?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D100P7M1 L12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D100P7M1 L12<span class="regime-tag tag-conv">convergence test</span></h4>
-  <p class="params">r_s=1, chi=100, P=7, M=1 - L12</p>
-  <p class="desc">Convergence test against the fiducial run at higher refinement.</p>
-</div>
-<div class="movie">
-  <div class="frame"><iframe src="https://www.youtube.com/embed/iBJ3NHru_bc?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M" title="R1D300P7M1 L12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-  <h4>R1D300P7M1 L12<span class="regime-tag tag-conv">convergence test</span></h4>
-  <p class="params">r_s=1, chi=300, P=7, M=1 - L12</p>
-  <p class="desc">Convergence test against R1D300P7M1 at higher refinement.</p>
-</div>
-</div>
-</section>
-
-<footer>
-<p>All movies are hosted on the <a href="https://www.youtube.com/playlist?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M">Stream Penetration playlist</a> on Zhiyuan Yao's YouTube channel. For questions please contact zhiyuan.yao [at] mail.huji.ac.il.</p>
-</footer>
-
+  <footer>
+    <p>All movies are hosted on the <a href="https://www.youtube.com/playlist?list=PLqoI8Bw6OjGzRI6xMDqq9JrTBYNMVf90M">Stream Penetration playlist</a> on Zhiyuan Yao’s YouTube channel. See also the <a href="shattering.html">shattering movie companion</a> and the published <a href="https://doi.org/10.1093/mnras/stae2771">Shattering paper (Yao et al. 2025, MNRAS 536, 3053)</a>. Page maintained by Zhiyuan Yao.</p>
+  </footer>
 </div>
 </body>
 </html>
