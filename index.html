@@ -3,195 +3,314 @@
 
 <head>
 
-  <title>Zhiyuan Yao's Homepage</title>
+  <title>Zhiyuan Yao | Postdoctoral Researcher in Astrophysics</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Zhiyuan Yao is currently a postdoc at Hebrew University of Jerusalem">
-  <meta name="keywords" content="Zhiyuan Yao, 姚致远, yaozhiyuan, Yuan, Yao, Computational astrophysics">
+  <meta name="description" content="Zhiyuan Yao is a postdoctoral researcher at the Hebrew University of Jerusalem studying galaxy formation, the circumgalactic medium, and multiphase hydrodynamics through high-resolution simulations.">
+  <meta name="keywords" content="Zhiyuan Yao, Yao Zhiyuan, astrophysics, galaxy formation, circumgalactic medium, multiphase hydrodynamics, cold streams, virial shocks, AGN feedback, AREPO, computational astrophysics, Hebrew University of Jerusalem">
   <meta name="author" content="Zhiyuan Yao" />
 
   <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Montserrat:400,600,700&display=swap">
 
   <style>
-  .w3-sidebar a {font-family: "Roboto", sans-serif}
-  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+    :root { --accent: #1f4f82; --accent-soft: #2d6fb1; --ink: #1f2937; --muted: #6b7280; --bg: #ffffff; --bg-soft: #f5f7fa; --border: #e5e7eb; }
+    html, body { background: var(--bg); color: var(--ink); }
+    body, h1, h2, h3, h4, h5, h6, .w3-wide { font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
+    .w3-sidebar a { font-family: "Roboto", sans-serif; }
+    .w3-sidebar { background: #ffffff !important; color: var(--ink) !important; border-right: 1px solid var(--border); }
+    .w3-sidebar a { color: var(--ink) !important; font-weight: 500; }
+    .w3-sidebar a:hover { color: var(--accent) !important; background: var(--bg-soft) !important; }
+    .w3-sidebar h2 { color: var(--accent); letter-spacing: 1px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-soft); text-decoration: underline; }
+    .hero { padding: 56px 24px 24px; }
+    .hero-name { font-size: 2.4rem; font-weight: 700; margin: 0; color: var(--ink); }
+    .hero-cn { font-size: 1.4rem; color: var(--muted); margin: 4px 0 8px; font-weight: 400; }
+    .hero-tagline { font-size: 1.05rem; color: var(--accent); font-style: italic; margin: 8px 0 16px; }
+    .hero-affil { color: var(--muted); margin-bottom: 12px; }
+    .hero-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .id-row { margin-top: 14px; }
+    .id-row a { display: inline-block; margin-right: 14px; color: var(--accent); font-weight: 500; }
+    .section { padding: 28px 24px; border-top: 1px solid var(--border); }
+    .section h2 { color: var(--accent); border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 0; }
+    .pub { padding: 10px 0; border-bottom: 1px dashed var(--border); }
+    .pub:last-child { border-bottom: none; }
+    .pub-title { font-weight: 600; color: var(--ink); }
+    .pub-authors { color: var(--muted); font-size: 0.95rem; }
+    .pub-venue { color: var(--accent); font-size: 0.9rem; }
+    .pub-links a { margin-right: 10px; font-size: 0.9rem; }
+    .first-author { font-weight: 700; }
+    .interest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .interest-card { background: var(--bg-soft); border-left: 3px solid var(--accent); padding: 14px 16px; border-radius: 4px; }
+    .interest-card h4 { margin: 0 0 6px; color: var(--accent); font-size: 1rem; }
+    .interest-card p { margin: 0; color: var(--ink); font-size: 0.92rem; }
+    .talks-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .talks-table th { text-align: left; padding: 8px 10px; background: var(--bg-soft); color: var(--accent); border-bottom: 2px solid var(--border); }
+    .talks-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .badge-invited { display: inline-block; background: var(--accent); color: #fff; font-size: 0.72rem; padding: 1px 7px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+    .news-list { list-style: none; padding-left: 0; }
+    .news-list li { padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .news-list li:last-child { border-bottom: none; }
+    .news-date { display: inline-block; min-width: 90px; color: var(--accent); font-weight: 600; }
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .project-card { border: 1px solid var(--border); border-radius: 6px; padding: 16px; background: var(--bg); transition: box-shadow .2s, transform .2s; }
+    .project-card:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .project-card h4 { margin: 0 0 8px; color: var(--accent); }
+    .project-card p { margin: 0 0 8px; font-size: 0.92rem; color: var(--ink); }
+    .footer { padding: 18px 24px; color: var(--muted); border-top: 1px solid var(--border); text-align: center; font-size: 0.9rem; }
+    @media (max-width: 992px) { .hero { padding: 30px 14px 12px; } }
   </style>
 
   <link rel="icon" type="image/png" href="images/icons.png">
-  
+
   <script src="jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-      // Add smooth scrolling to all links
       $("a").on('click', function(event) {
-
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-          // Store hash
-          var hash = this.hash;
-
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (300) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 300, function(){
-
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
+        if (this.hash !== "" && this.hash.charAt(0) === '#') {
+          var t = $(this.hash);
+          if (t.length) { event.preventDefault(); $('html, body').animate({scrollTop: t.offset().top}, 600); }
+        }
       });
     });
+    function w3_open(){document.getElementById("mySidebar").style.display="block";document.getElementById("myOverlay").style.display="block";}
+    function w3_close(){document.getElementById("mySidebar").style.display="none";document.getElementById("myOverlay").style.display="none";}
   </script>
-  //
 
 </head>
 
+<body class="w3-content" style="max-width:1280px;">
 
-<body class="w3-content" style="max-width:100%">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-dark-grey w3-collapse w3-top w3-right" style="z-index:3;width:15%;min-width:150px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <h3><b>YAO</b></h3>
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:240px;font-weight:bold" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h2 class="w3-padding-64 w3-wide"><b>YAO</b></h2>
   </div>
-  <div class="w3-padding-64 w3-text-light-grey w3-large" style="font-weight:bold">
-    <a href="#home" class="w3-bar-item w3-button">Home</a>
-    <a href="#news" class="w3-bar-item w3-button">News</a>
-    <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+  <div class="w3-bar-block">
+    <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#research" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Research</a>
+    <a href="#publications" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Publications</a>
+    <a href="#talks" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Talks</a>
+    <a href="#news" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">News</a>
+    <a href="#projects" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Projects</a>
+    <a href="#cv" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">CV &amp; Contact</a>
   </div>
 </nav>
 
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-dark-grey w3-xlarge">
-  <div class="w3-bar-item w3-padding-24">YAO</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
-  </div>
+<!-- Top bar on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">Zhiyuan Yao</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">&#9776;</a>
 </header>
 
-<!-- Overlay effect when opening sidebar on small screens -->
+<!-- Overlay for sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:15%">
+<!-- Main content -->
+<div class="w3-main" style="margin-left:240px;">
 
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:15%"></div>
+  <!-- HERO / HOME -->
+  <section id="home" class="hero">
+    <div class="w3-row">
+      <div class="w3-col l4 m12" style="text-align:center; padding:10px;">
+        <img src="images/ZhiyuanYao.png" alt="Zhiyuan Yao" class="hero-photo">
+      </div>
+      <div class="w3-col l8 m12" style="padding:10px 24px;">
+        <h1 class="hero-name">Zhiyuan Yao <span class="hero-cn">姚致远</span></h1>
+        <div class="hero-tagline">Studying how cold gas survives, fragments, and feeds galaxies — through high-resolution hydrodynamic simulations.</div>
+        <div class="hero-affil">
+          Postdoctoral Researcher,
+          <a href="https://phys.huji.ac.il/astrophysics-and-relativity">Racah Institute of Physics, Hebrew University of Jerusalem</a><br>
+          Working with <a href="https://www.nirmandelker.com/">Nir Mandelker</a> and <a href="http://old.phys.huji.ac.il/~dekel/">Avishai Dekel</a>
+        </div>
+        <div class="id-row">
+          <a href="mailto:zhiyuan.yao@mail.huji.ac.il"><i class="fa fa-envelope"></i> Email</a>
+          <a href="https://drive.google.com/file/d/1p88TqJx_cHuYtcKqAECaNP8YOB_UvmFZ/view?usp=sharing"><i class="fa fa-file-text-o"></i> CV (Nov 2025)</a>
+          <a href="https://ui.adsabs.harvard.edu/public-libraries/RheNa-JwR2qT-8rXTS8T2A"><i class="fa fa-book"></i> ADS Library</a>
+          <a href="https://orcid.org/0000-0003-1604-1272"><i class="fa fa-id-card-o"></i> ORCID</a>
+          <a href="https://github.com/Zhiyuan-21"><i class="fa fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- The Home Section -->
-  <div class="w3-container w3-center w3-padding-32" id="home">
-    <div class="w3-left w3-padding-32" style="margin-left:3%">
-    <img style="width: 80%;max-width: 340px" alt="profile photo" src="images/ZhiyuanYao.png">
-    <h1>Zhiyuan Yao</h1>
-    <h1>姚致远</h1>
-    <a style="color: #447ec9" href="mailto:zhiyuan.yao@mail.huji.ac.il">Email</a> &nbsp/&nbsp
-    <a style="color: #447ec9" href="https://drive.google.com/file/d/1p88TqJx_cHuYtcKqAECaNP8YOB_UvmFZ/view?usp=sharing" target="_blank">CV (Nov 2025)</a> &nbsp/&nbsp
-    <a style="color: #447ec9" href="https://ui.adsabs.harvard.edu/search/q=docs(library%2FRheNa-JwR2qT-8rXTS8T2A)&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank">ADS</a>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>I am a postdoctoral researcher at the <a href="https://phys.huji.ac.il/astrophysics-and-relativity">Hebrew University of Jerusalem</a> since 2022, working with <a href="https://www.nirmandelker.com/">Nir Mandelker</a> and <a href="http://old.phys.huji.ac.il/~dekel/">Avishai Dekel</a> on galaxy formation, the circumgalactic medium, and multiphase hydrodynamics — with particular focus on cold streams penetrating virial shocks, turbulent mixing, and the shattering and coagulation of cold gas. I obtained my PhD jointly between <a href="http://english.shao.cas.cn/">Shanghai Astronomical Observatory</a> (with <a href="http://202.127.29.4/fyuan">Feng Yuan</a>) and the <a href="https://www.mpa-garching.mpg.de/">Max Planck Institute for Astrophysics</a> (with <a href="https://wwwmpa.mpa-garching.mpg.de/~volker/">Volker Springel</a>). My main tools are high-resolution hydrodynamic simulations, complemented by analytic modeling. Outside research, I enjoy football, hiking, and reading.</p>
+  </section>
 
+  <!-- RESEARCH INTERESTS -->
+  <section id="research" class="section">
+    <h2>Research Interests</h2>
+    <div class="interest-grid">
+      <div class="interest-card"><h4>Cold streams &amp; virial shocks</h4><p>How cold cosmic-web streams penetrate hot halos and feed galaxies at high redshift.</p></div>
+      <div class="interest-card"><h4>Multiphase CGM</h4><p>Shattering, coagulation, and turbulent mixing of cold clouds in the circumgalactic medium.</p></div>
+      <div class="interest-card"><h4>AGN feedback</h4><p>Sub-grid physics of mechanical AGN feedback in early-type galaxies and its observable signatures.</p></div>
+      <div class="interest-card"><h4>Numerical methods</h4><p>High-resolution hydrodynamic simulations with AREPO, RAMSES, and ZEUS-MP/2 on large HPC systems.</p></div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="section">
+    <h2>Publications</h2>
+    <p style="color:var(--muted); font-size:0.92rem;">A complete and up-to-date list is available on my <a href="https://ui.adsabs.harvard.edu/public-libraries/RheNa-JwR2qT-8rXTS8T2A">ADS library</a> and <a href="https://orcid.org/0000-0003-1604-1272">ORCID</a> profile.</p>
+
+    <h3 style="color:var(--ink); margin-top:18px;">First-author</h3>
+
+    <div class="pub">
+      <div class="pub-title">Effects of cloud geometry and metallicity on shattering and coagulation of cold gas, and implications for cold streams penetrating virial shocks</div>
+      <div class="pub-authors"><span class="first-author">Yao, Z.</span>, Mandelker, N., Oh, S. P., Aung, H., Dekel, A.</div>
+      <div class="pub-venue">MNRAS, 536, 3053 (2025)</div>
+      <div class="pub-links">
+        <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.536.3053Y/abstract">ADS</a>
+        <a href="https://academic.oup.com/mnras/article/536/4/3053/7919474">Journal</a>
+      </div>
     </div>
 
-    <div class="w3-padding-32">
-    <p class="w3-justify" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
-        I am a postdoctoral researcher at <a style="color: #447ec9" href="https://phys.huji.ac.il/astrophysics-and-relativity" target="_blank">Hebrew University of Jerusalem</a> since 2022, working with
-        <a style="color: #447ec9" href="https://www.nirmandelker.com/" target="_blank">Nir Mandelker</a> and <a style="color: #447ec9" href="http://old.phys.huji.ac.il/~dekel/" target="_blank">Avishai Dekel</a> on galaxy formation, the circumgalactic medium, and multiphase hydrodynamics &mdash;
-        particularly cold streams penetrating virial shocks, turbulent mixing, and shattering/coagulation of cold gas.
-        I got my PhD jointly between <a style="color: #447ec9" href="http://english.shao.cas.cn/" target="_blank">Shanghai Astronomical Observatory</a> (with <a style="color: #447ec9" href="http://202.127.29.4/fyuan" target="_blank">Feng Yuan</a>)
-        and <a style="color: #447ec9" href="https://www.mpa-garching.mpg.de/" target="_blank">Max Planck Institute for Astrophysics</a> (with <a style="color: #447ec9" href="https://wwwmpa.mpa-garching.mpg.de/~volker/" target="_blank">Volker Springel</a>).
-        I mainly use high-resolution hydrodynamic simulations, complemented by analytic models.
-        Besides research, I enjoy playing football, hiking, and reading.
-
-    </p>
+    <div class="pub">
+      <div class="pub-title">Active galactic nucleus feedback in an elliptical galaxy with the most updated AGN physics: parameter explorations</div>
+      <div class="pub-authors"><span class="first-author">Yao, Z.</span>, Yuan, F., Ostriker, J. P.</div>
+      <div class="pub-venue">MNRAS, 501, 398 (2021)</div>
+      <div class="pub-links">
+        <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501..398Y/abstract">ADS</a>
+      </div>
     </div>
-  </div>
 
-<!-- The News Section -->
-  <div class="w3-container w3-light-grey w3-padding-32" id="news">
+    <div class="pub">
+      <div class="pub-title">Hot gas flows on a parsec scale in the low-luminosity active galactic nucleus NGC 3115</div>
+      <div class="pub-authors"><span class="first-author">Yao, Z.</span>, Gan, Z.</div>
+      <div class="pub-venue">MNRAS, 492, 444 (2020)</div>
+      <div class="pub-links">
+        <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..444Y/abstract">ADS</a>
+      </div>
+    </div>
+
+    <h3 style="color:var(--ink); margin-top:18px;">Selected collaborative</h3>
+
+    <div class="pub">
+      <div class="pub-title">From Feedback-Free Star Clusters to Little Red Dots via Compaction</div>
+      <div class="pub-authors">Dekel, A., Dutta Chowdhury, D., Lapiner, S., et al. (incl. Yao, Z.)</div>
+      <div class="pub-venue">arXiv:2511.07578 (2025)</div>
+      <div class="pub-links">
+        <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv251107578D/abstract">ADS</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">From FFB starbursts at cosmic dawn to quenching at cosmic morning: Hi-z galaxy bimodality</div>
+      <div class="pub-authors">Dekel, A., Mandelker, N., Li, Z., et al. (incl. Yao, Z.)</div>
+      <div class="pub-venue">MNRAS, 544, 160 (2025)</div>
+      <div class="pub-links">
+        <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.544..160D/abstract">ADS</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Do current X-ray observations capture most of the black-hole accretion at high redshifts?</div>
+      <div class="pub-authors">Yang, G., Estrada-Carpenter, V., Papovich, C., et al. (incl. Yao, Z.)</div>
+      <div class="pub-venue">ApJ, 921, 170 (2021)</div>
+      <div class="pub-links">
+        <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...921..170Y/abstract">ADS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALKS -->
+  <section id="talks" class="section">
+    <h2>Talks &amp; Seminars</h2>
+    <table class="talks-table">
+      <thead><tr><th style="width:110px;">Date</th><th>Venue</th></tr></thead>
+      <tbody>
+        <tr><td>12/2025</td><td>Tel Aviv University Seminar, Tel Aviv, Israel <span class="badge-invited">Invited</span></td></tr>
+        <tr><td>11/2025</td><td><em>Modelling of Multiphase Astrophysical Media</em>, Ringberg, Germany <span class="badge-invited">Invited</span></td></tr>
+        <tr><td>08/2025</td><td>Galaxy Formation Workshop, Santa Cruz, United States</td></tr>
+        <tr><td>07/2025</td><td><em>Cosmic Ecosystems</em>, Waterloo, Canada</td></tr>
+        <tr><td>08/2024</td><td>Galaxy Formation Workshop, Santa Cruz, United States</td></tr>
+        <tr><td>05/2023</td><td><em>Modelling of Multiphase Astrophysical Media</em>, Kochel, Germany</td></tr>
+        <tr><td>08/2022</td><td>Galaxy Formation Workshop, Santa Cruz, United States</td></tr>
+        <tr><td>10/2021</td><td>MPA Institute Seminar, Garching, Germany <span class="badge-invited">Invited</span></td></tr>
+        <tr><td>07/2021</td><td>Ringberg Retreat, Munich, Germany</td></tr>
+        <tr><td>2018-2020</td><td>Four contributed talks at meetings in China and Germany</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news" class="section">
     <h2>News</h2>
-    <p><li> 12/2025, give an invited seminar at Tel Aviv University. </li></p>
-    <p><li> 11/2025, give an invited contribution at <i>Modelling of Multiphase Astrophysical Media</i>, Ringberg, Germany. </li></p>
-    <p><li> 10/2025, new first-author paper <a style="color: #447ec9" href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.536.3053Y/abstract" target="_blank">"Effects of cloud geometry and metallicity on shattering and coagulation of cold gas, and implications for cold streams penetrating virial shocks"</a> published in MNRAS. </li></p>
-    <p><li> 08/2025, give a talk at Galaxy Formation Workshop, Santa Cruz, United States. </li></p>
-    <p><li> 07/2025, give a talk at <i>Cosmic Ecosystems</i>, Waterloo, Canada. </li></p>
-    <p><li> 2024, awarded the Rosenblum prize. </li></p>
-    <p><li> 01/2021, publish the paper <a style="color: #447ec9" href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501..398Y/abstract">"Active galactic nucleus feedback in an elliptical galaxy with the most updated AGN physics: Parameter explorations"</a> on MNRAS. </li></p>
-    <p><li> 02/2020, publish the paper <a style="color: #447ec9" href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..444Y/abstract">"Hot gas flows on a parsec scale in the low-luminosity active galactic nucleus NGC 3115"</a> on MNRAS. </li></p>
-  </div>
-<!-- The Projects Section -->
-  <div class="w3-container w3-padding-32" id="projects">
+    <ul class="news-list">
+      <li><span class="news-date">12/2025</span> Invited seminar at Tel Aviv University.</li>
+      <li><span class="news-date">11/2025</span> Invited contribution at <em>Modelling of Multiphase Astrophysical Media</em>, Ringberg, Germany.</li>
+      <li><span class="news-date">10/2025</span> New first-author paper <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.536.3053Y/abstract">"Effects of cloud geometry and metallicity on shattering and coagulation of cold gas, and implications for cold streams penetrating virial shocks"</a> published in MNRAS.</li>
+      <li><span class="news-date">08/2025</span> Talk at Galaxy Formation Workshop, Santa Cruz, United States.</li>
+      <li><span class="news-date">07/2025</span> Talk at <em>Cosmic Ecosystems</em>, Waterloo, Canada.</li>
+      <li><span class="news-date">2024</span> Awarded the Rosenblum prize.</li>
+      <li><span class="news-date">01/2021</span> Paper <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501..398Y/abstract">"Active galactic nucleus feedback in an elliptical galaxy with the most updated AGN physics: Parameter explorations"</a> published in MNRAS.</li>
+      <li><span class="news-date">02/2020</span> Paper <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.492..444Y/abstract">"Hot gas flows on a parsec scale in the low-luminosity active galactic nucleus NGC 3115"</a> published in MNRAS.</li>
+    </ul>
+  </section>
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
     <h2>Recent Projects</h2>
-    <p class="w3-justify">
-    <a href="stream_penetration.html">
-    Stream Penetration Simulations
-    </a>
-    <p class="w3-justify">
-    <a href="shattering.html">
-    Shattering Simulations
-    </a>
-    <h4><li>AGN feedback in an isolated galaxy</li></h4>
-    The important role of AGN mechanical feedback in early-type galaxies is supported both by observations and simulations.
-    Relativistic jets and bubbles are one of the most prominent structures in giant galaxies, while simulations with AGN mechanical
-    feedback are better consistent with observations including the BH-bulge mass relation, Lx-Tx relation, galaxy formation efficiency
-    at high mass end, etc. Despite the big success of the cosmological simulations in reproducing the universe, we do not fully understand
-    the physics inside the AGN sub-grid model, which is full of free parameters to simplify the calculations on small scales. To figure out
-    the physics behind parameters and provide a physically motivated AGN sub-grid model, we perform simulations on an isolated galaxy with
-    much higher resolution at the center.
-    
-    <h4><li>Cloud-wind interactions</li></h4>
-    Cold gas is the key to interesting physics in galaxies, such as BH accretion and star formation, thus very important for us
-    to understand the galaxy evolution. The formation and evolution of the cold gas in the hot medium gains more attention in the
-    theoretical field in recent years due to the observational ubiquity of the multi-phase gas. The AGN wind might stimulate the cold
-    gas formation by uplift, and the cold gas accretion in turn triggers the strong AGN mechanical feedback. There is possibly a close
-    link between the wind power and the cold gas mass. However, the real cases are much more complicated due to the hot-cold gas interactions,
-    which is the goal of this project. We perform the windtunnel simulations by injecting hot wind blown to the cold cloud. Then we can study
-    the cloud evolution including shattering, evaporation, or condensing in the combined effects of conduction and cooling.
-    </p>
-
-
-  </div>
-  
-   
-   
-    <div class="w3-light-grey w3-center w3-padding-24">
-
-    &copy Zhiyuan Yao &middot Powered by <a href="https://pages.github.com/" target="_blank">Github Pages</a>
-
-
+    <div class="project-grid">
+      <div class="project-card">
+        <h4><a href="stream_penetration.html">Stream Penetration Simulations</a></h4>
+        <p>Idealized hydrodynamic simulations of cold cosmic-web streams penetrating hot, virial-shocked halos at high redshift, exploring fragmentation, mixing, and survival to the central galaxy.</p>
+      </div>
+      <div class="project-card">
+        <h4><a href="shattering.html">Shattering Simulations</a></h4>
+        <p>Resolved studies of how thermally unstable cold clouds shatter and coagulate as a function of geometry and metallicity, with implications for the multiphase CGM.</p>
+      </div>
+      <div class="project-card">
+        <h4>AGN Feedback in Isolated Galaxies</h4>
+        <p>High-resolution isolated-galaxy simulations to understand the physics behind AGN sub-grid prescriptions used in cosmological simulations, focusing on relativistic jets and bubbles in early-type galaxies.</p>
+      </div>
+      <div class="project-card">
+        <h4>Cloud-Wind Interactions</h4>
+        <p>Wind-tunnel simulations of cold clouds embedded in hot AGN-driven winds, studying the combined effects of conduction, cooling, evaporation, and condensation on cloud survival.</p>
+      </div>
     </div>
+  </section>
 
-  <!-- End page content -->
+  <!-- AWARDS -->
+  <section id="awards" class="section">
+    <h2>Honors &amp; Awards</h2>
+    <ul class="news-list">
+      <li><span class="news-date">2024</span> Rosenblum Prize, Hebrew University of Jerusalem.</li>
+      <li><span class="news-date">2021-2022</span> Sino-German Joint PhD Exchange Program (Shanghai Astronomical Observatory and Max Planck Institute for Astrophysics, 04/2021 - 03/2022).</li>
+      <li><span class="news-date">2020</span> Academic Scholarship, University of Chinese Academy of Sciences.</li>
+    </ul>
+  </section>
+
+  <!-- TEACHING & SERVICE -->
+  <section id="teaching" class="section">
+    <h2>Mentoring &amp; Service</h2>
+    <p><strong>Mentoring.</strong> Aviad Leibovich (B.Sc. student), Hebrew University of Jerusalem, 2025-present.</p>
+    <p><strong>Professional service.</strong> Organizer, Astrolunch Seminar Series, Hebrew University of Jerusalem.</p>
+  </section>
+
+  <!-- CV & CONTACT -->
+  <section id="cv" class="section">
+    <h2>CV &amp; Contact</h2>
+    <p><strong>Curriculum Vitae:</strong> <a href="https://drive.google.com/file/d/1p88TqJx_cHuYtcKqAECaNP8YOB_UvmFZ/view?usp=sharing">Download PDF (Nov 2025)</a></p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:zhiyuan.yao@mail.huji.ac.il">zhiyuan.yao@mail.huji.ac.il</a><br>
+      <strong>Office:</strong> Office 209, Ross building, Hebrew University of Jerusalem, Givat Ram, 9190401 Jerusalem, Israel<br>
+      <strong>ORCID:</strong> <a href="https://orcid.org/0000-0003-1604-1272">0000-0003-1604-1272</a>
+    </p>
+  </section>
+
+  <footer class="footer">
+    &copy; Zhiyuan Yao &middot; Hosted on <a href="https://pages.github.com/">GitHub Pages</a>
+  </footer>
+
 </div>
-
-<script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
-
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
 
 </body>
 </html>
