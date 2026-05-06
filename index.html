@@ -26,22 +26,25 @@
     .w3-sidebar h2 { color: var(--accent); letter-spacing: 1px; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { color: var(--accent-soft); text-decoration: underline; }
-    .hero { padding: 56px 24px 24px; }
-    .hero-name { font-size: 2.4rem; font-weight: 700; margin: 0; color: var(--ink); }
-    .hero-cn { font-size: 1.4rem; color: var(--muted); margin: 4px 0 8px; font-weight: 400; }
-    .hero-tagline { font-size: 1.05rem; color: var(--accent); font-style: italic; margin: 8px 0 16px; }
-    .hero-affil { color: var(--muted); margin-bottom: 12px; }
-    .hero-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-    .id-row { margin-top: 14px; }
-    .id-row a { display: inline-block; margin-right: 14px; color: var(--accent); font-weight: 500; }
-    .section { padding: 28px 24px; border-top: 1px solid var(--border); }
-    .section h2 { color: var(--accent); border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 0; }
-    .pub { padding: 10px 0; border-bottom: 1px dashed var(--border); }
+    .hero { padding: 56px 32px 32px; background: linear-gradient(135deg, #f8fafd 0%, #ffffff 60%); }
+    .hero-name { font-size: 2.4rem; font-weight: 700; margin: 0; color: var(--ink); letter-spacing: -0.5px; }
+    .hero-cn { font-size: 1.3rem; color: var(--muted); margin: 4px 0 10px; font-weight: 400; }
+    .hero-tagline { font-size: 1rem; color: var(--accent); font-style: italic; margin: 10px 0 14px; line-height: 1.6; border-left: 3px solid var(--accent); padding-left: 10px; background: rgba(31,79,130,0.04); padding: 8px 12px; border-radius: 0 4px 4px 0; }
+    .hero-affil { color: var(--muted); margin-bottom: 14px; line-height: 1.7; font-size: 0.97rem; }
+    .hero-photo { width: 190px; height: 190px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 24px rgba(31,79,130,0.15), 0 0 0 4px #fff, 0 0 0 6px var(--border); }
+    .id-row { margin-top: 16px; }
+    .id-row a { color: var(--accent); font-weight: 500; }
+    .id-chip { display: inline-flex; align-items: center; gap: 5px; margin: 4px 8px 4px 0; padding: 5px 14px; border: 1px solid var(--border); border-radius: 20px; font-size: 0.87rem; color: var(--accent) !important; font-weight: 500; transition: background .15s, border-color .15s; text-decoration: none !important; }
+    .id-chip:hover { background: var(--bg-soft) !important; border-color: var(--accent); text-decoration: none !important; }
+    .section { padding: 32px 32px; border-top: 1px solid var(--border); }
+    .section h2 { color: var(--accent); border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 0; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .pub { padding: 14px 0; border-bottom: 1px solid var(--border); }
     .pub:last-child { border-bottom: none; }
-    .pub-title { font-weight: 600; color: var(--ink); }
-    .pub-authors { color: var(--muted); font-size: 0.95rem; }
-    .pub-venue { color: var(--accent); font-size: 0.9rem; }
-    .pub-links a { margin-right: 10px; font-size: 0.9rem; }
+    .pub-title { font-weight: 600; color: var(--ink); line-height: 1.5; margin-bottom: 4px; }
+    .pub-authors { color: var(--muted); font-size: 0.93rem; margin-bottom: 3px; }
+    .pub-venue { color: var(--accent); font-size: 0.88rem; font-weight: 500; margin-bottom: 5px; }
+    .pub-links a { margin-right: 10px; font-size: 0.85rem; padding: 2px 9px; border: 1px solid var(--border); border-radius: 12px; display: inline-block; }
+    .pub-links a:hover { background: var(--bg-soft); border-color: var(--accent); text-decoration: none; }
     .first-author { font-weight: 700; }
     .interest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
     .interest-card { background: var(--bg-soft); border-left: 3px solid var(--accent); padding: 14px 16px; border-radius: 4px; }
@@ -61,6 +64,11 @@
     .project-card h4 { margin: 0 0 8px; color: var(--accent); }
     .project-card p { margin: 0 0 8px; font-size: 0.92rem; color: var(--ink); }
     .footer { padding: 18px 24px; color: var(--muted); border-top: 1px solid var(--border); text-align: center; font-size: 0.9rem; }
+    .nav-active { color: var(--accent) !important; background: rgba(31,79,130,0.07) !important; border-left: 3px solid var(--accent) !important; }
+    .sidebar-brand { padding: 36px 0 8px; }
+    .sidebar-title { font-size: 1.5rem; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin: 0 0 6px; }
+    .sidebar-sub { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.7; }
+    .talks-table tbody tr:hover td { background: var(--bg-soft); }
     @media (max-width: 992px) { .hero { padding: 30px 14px 12px; } }
   </style>
 
@@ -78,6 +86,14 @@
     });
     function w3_open(){document.getElementById("mySidebar").style.display="block";document.getElementById("myOverlay").style.display="block";}
     function w3_close(){document.getElementById("mySidebar").style.display="none";document.getElementById("myOverlay").style.display="none";}
+    var sectionNav = {home:'home',about:'home',research:'research',publications:'publications',talks:'talks',projects:'projects',awards:'cv',teaching:'cv',cv:'cv'};
+    function scrollspy() {
+      var pos = $(window).scrollTop() + 80, active = 'home';
+      Object.keys(sectionNav).forEach(function(id){ var el = document.getElementById(id); if(el && el.offsetTop <= pos) active = sectionNav[id]; });
+      $('.w3-bar-block a').removeClass('nav-active');
+      $('.w3-bar-block a[href="#'+active+'"]').addClass('nav-active');
+    }
+    $(window).on('scroll', scrollspy); scrollspy();
   </script>
 
 </head>
@@ -87,8 +103,9 @@
 <!-- Sidebar -->
 <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:240px;font-weight:bold" id="mySidebar"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
-  <div class="w3-container">
-    <h2 class="w3-padding-64 w3-wide"><b>YAO</b></h2>
+  <div class="sidebar-brand w3-container">
+    <div class="sidebar-title">YAO</div>
+    <div class="sidebar-sub">Zhiyuan Yao<br>Postdoctoral Researcher<br>Hebrew Univ. of Jerusalem</div>
   </div>
   <div class="w3-bar-block">
     <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
@@ -127,11 +144,11 @@
           Working with <a href="https://www.nirmandelker.com/">Nir Mandelker</a> and <a href="http://old.phys.huji.ac.il/~dekel/">Avishai Dekel</a>
         </div>
         <div class="id-row">
-          <a href="mailto:zhiyuan.yao@mail.huji.ac.il"><i class="fa fa-envelope"></i> Email</a>
-          <a href="https://drive.google.com/file/d/1p88TqJx_cHuYtcKqAECaNP8YOB_UvmFZ/view?usp=sharing"><i class="fa fa-file-text-o"></i> CV (Nov 2025)</a>
-          <a href="https://ui.adsabs.harvard.edu/public-libraries/RheNa-JwR2qT-8rXTS8T2A"><i class="fa fa-book"></i> ADS Library</a>
-          <a href="https://orcid.org/0000-0003-1604-1272"><i class="fa fa-id-card-o"></i> ORCID</a>
-          <a href="https://github.com/Zhiyuan-21"><i class="fa fa-github"></i> GitHub</a>
+          <a class="id-chip" href="mailto:zhiyuan.yao@mail.huji.ac.il"><i class="fa fa-envelope"></i> Email</a>
+          <a class="id-chip" href="https://drive.google.com/file/d/1p88TqJx_cHuYtcKqAECaNP8YOB_UvmFZ/view?usp=sharing"><i class="fa fa-file-text-o"></i> CV (Nov 2025)</a>
+          <a class="id-chip" href="https://ui.adsabs.harvard.edu/public-libraries/RheNa-JwR2qT-8rXTS8T2A"><i class="fa fa-book"></i> ADS Library</a>
+          <a class="id-chip" href="https://orcid.org/0000-0003-1604-1272"><i class="fa fa-id-card-o"></i> ORCID</a>
+          <a class="id-chip" href="https://github.com/Zhiyuan-21"><i class="fa fa-github"></i> GitHub</a>
         </div>
       </div>
     </div>
