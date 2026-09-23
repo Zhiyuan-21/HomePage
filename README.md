@@ -1,2 +1,2 @@
 # HomePage
-Zhiyuan Yao's HomePage: https://zhiyuan-21.github.io/HomePage/
+Zhiyuan Yao's HomePage: https://www.zhiyuanyao.com/

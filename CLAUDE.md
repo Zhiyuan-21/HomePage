@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-Static academic personal homepage for Zhiyuan Yao, hosted at https://zhiyuan-21.github.io/HomePage/. No build step, no package manager, no test suite — changes are deployed by pushing to the `master` branch (GitHub Pages).
+Static academic personal homepage for Zhiyuan Yao, hosted at https://www.zhiyuanyao.com/ (GitHub Pages custom domain, set by the `CNAME` file; DNS is on Cloudflare, DNS-only records). No build step, no package manager, no test suite — changes are deployed by pushing to the `master` branch (GitHub Pages).
 
 ## Development
 
