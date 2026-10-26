@@ -84,6 +84,13 @@
     .project-card:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.08); transform: translateY(-2px); }
     .project-card h4 { margin: 0 0 8px; color: var(--accent); }
     .project-card p { margin: 0 0 8px; font-size: 0.92rem; color: var(--ink); }
+    .featured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 26px; }
+    .featured-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+    .featured-card .card-body { padding: 14px 16px 16px; }
+    .project-thumb { display: block; position: relative; aspect-ratio: 2 / 1; overflow: hidden; background: #fff; border-bottom: 1px solid var(--border); }
+    .project-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+    .project-thumb.fill img { object-fit: cover; }
+    .subhead { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; font-weight: 600; }
     .footer { padding: 18px 24px; color: var(--muted); border-top: 1px solid var(--border); text-align: center; font-size: 0.9rem; }
     .nav-active { color: var(--accent) !important; background: rgba(31,79,130,0.07) !important; border-left: 3px solid var(--accent) !important; }
     .sidebar-brand { padding: 36px 0 8px; }
@@ -182,30 +189,42 @@
   <!-- RESEARCH -->
   <section id="research" class="section">
     <h2>Research</h2>
+    <div class="featured-grid">
+      <div class="project-card featured-card">
+        <a class="project-thumb fill" href="https://arxiv.org/abs/2610.29070"><img src="images/mage/thumb.webp" width="960" height="600" loading="lazy" alt="A massive galaxy at cosmic dawn from the MAGE simulations"></a>
+        <div class="card-body">
+          <h4>Massive Galaxies at Cosmic Dawn</h4>
+          <p>Simulations from the MAGE (Massive Assembly of Galaxies in the Early universe) suite, studying the size evolution and disk formation of massive galaxies at cosmic dawn.</p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2610.29070">arXiv</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card featured-card">
+        <a class="project-thumb" href="stream_penetration.html"><img src="images/penetration/thumb.webp" width="960" height="540" loading="lazy" alt="Cartoon of a cold stream penetrating the virial shock of a massive halo"></a>
+        <div class="card-body">
+          <h4><a href="stream_penetration.html">Stream Penetration Simulations</a></h4>
+          <p>Idealized hydrodynamic simulations of cold cosmic-web streams penetrating hot, virial-shocked halos at high redshift, exploring fragmentation, mixing, and survival to the central galaxy.</p>
+          <div class="pub-links">
+            <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260714090Y/abstract">ADS</a>
+            <a href="stream_penetration.html">Movies</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card featured-card">
+        <a class="project-thumb fill" href="shattering.html"><img src="images/shattering/thumb.webp" width="941" height="470" loading="lazy" alt="Simulation snapshot of a shattering cold gas cylinder surrounded by a mist of small cold fragments"></a>
+        <div class="card-body">
+          <h4><a href="shattering.html">Shattering Simulations</a></h4>
+          <p>Resolved studies of how thermally unstable cold clouds shatter and coagulate as a function of geometry and metallicity, with implications for the multiphase CGM.</p>
+          <div class="pub-links">
+            <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.536.3053Y/abstract">ADS</a>
+            <a href="shattering.html">Movies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="subhead">Earlier work</div>
     <div class="project-grid">
-      <div class="project-card">
-        <h4>Massive Galaxies at Cosmic Dawn</h4>
-        <p>Simulations from the MAGE (Massive Assembly of Galaxies in the Early universe) suite, studying the size evolution and disk formation of massive galaxies at cosmic dawn.</p>
-        <div class="pub-links">
-          <a href="https://arxiv.org/abs/2610.29070">arXiv</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <h4><a href="stream_penetration.html">Stream Penetration Simulations</a></h4>
-        <p>Idealized hydrodynamic simulations of cold cosmic-web streams penetrating hot, virial-shocked halos at high redshift, exploring fragmentation, mixing, and survival to the central galaxy.</p>
-        <div class="pub-links">
-          <a href="https://ui.adsabs.harvard.edu/abs/2026arXiv260714090Y/abstract">ADS</a>
-          <a href="stream_penetration.html">Movies</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <h4><a href="shattering.html">Shattering Simulations</a></h4>
-        <p>Resolved studies of how thermally unstable cold clouds shatter and coagulate as a function of geometry and metallicity, with implications for the multiphase CGM.</p>
-        <div class="pub-links">
-          <a href="https://ui.adsabs.harvard.edu/abs/2025MNRAS.536.3053Y/abstract">ADS</a>
-          <a href="shattering.html">Movies</a>
-        </div>
-      </div>
       <div class="project-card">
         <h4>Cloud-Wind Interactions</h4>
         <p>Wind-tunnel simulations of cold clouds embedded in hot AGN-driven winds, studying the combined effects of conduction, cooling, evaporation, and condensation on cloud survival.</p>
